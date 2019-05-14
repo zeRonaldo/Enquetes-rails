@@ -1,0 +1,51 @@
+<div class="page-title">
+    <h3>Cadastre-se</h3>
+</div>
+
+<%= form_for @user do |f|%>
+    <% if @user.errors.any?%>
+        <div class="container">
+            <div class="col s12 m8">
+                <ul class="collection with-header">
+                    <li class="collection-header"><h4>Ops! algo de errado não está certo</h4></li>
+                    <% @user.errors.full_messages.each do |message|%>
+                        <li class="collection-item"><div> <%= message %><a class="secondary-content"><i class="material-icons">report_problem</i></a></div></li>
+                    <%end%>
+                </ul>
+            </div>
+        </div>
+    <%end%>
+  
+   <div class="container">
+        <div class="col s12 m8">
+            <div class="field">
+                <%= f.label :nome%>
+                <%= f.text_field :name%>
+            </div>
+
+            <div class="field">
+                <%= f.label :email%>
+                <%= f.text_field :email%>
+            </div>
+
+            <div class="field">
+                <%= f.label :sexo%>
+                <%= f.select :sex, ['Masculino','Feminino','Intersex'] %>
+            </div>
+
+            <div class="field">
+                <%= f.label :senha%>
+                <%= f.password_field :password%>
+            </div>
+
+            <div class="field">
+                <%= f.label :'confirme a senha'%>
+                <%= f.password_field :password_confirmation%>
+            </div>
+
+            <div class="actions">
+                <%= f.submit%>
+            </div>
+        </div>
+    </div>
+<%end%>

@@ -1,0 +1,24 @@
+<div class="page-title">
+    <h3>Login</h3>
+</div>
+
+<%= form_tag login_path do %>
+   <div class="container">
+        <div class="col s12 m8">
+           
+            <div class="field">
+                <%= label_tag :email%>
+                <%= text_field_tag :email, params[:email]%>
+            </div>
+
+            <div class="field">
+                <%= label_tag :senha%>
+                <%= password_field_tag :password%>
+            </div>
+
+            <div class="actions">
+                <%= submit_tag "Entrar"%>
+            </div>
+        </div>
+    </div>
+<%end%>
