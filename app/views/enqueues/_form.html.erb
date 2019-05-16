@@ -1,0 +1,54 @@
+<div class="container">
+<%= form_with(model: enqueue, local: true) do |form| %>
+  <% if enqueue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(enqueue.errors.count, "error") %> prohibited this enqueue from being saved:</h2>
+
+      <ul>
+      <% enqueue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   
+                    <div class="col s12 m8">
+                    
+                        <div class="row">
+                            <div class="input-field col s12">
+                              <%= form.label :título %>
+                              <%= form.text_field :title %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="input-field col s6">
+                            <%= form.label :Tipo %>
+                            <%= form.text_field :tipo_enquete %>
+                          </div>
+                          <div class="input-field col s6">
+                            <%= form.label :Categoria %>
+                            <%= form.text_field :category %>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                              
+                              <%= form.text_area :text, :class => 'editor' %>
+                            </div>
+                        </div>
+
+                        
+
+
+    <%= form.hidden_field :user_id, :value => @current_user %>
+  
+  <div class="actions center-align">
+    <%= form.submit 'Criar Enquete', :class => "btn waves-effect waves-light"%>
+  </div>
+  </div>
+  
+<% end %>
+</div>

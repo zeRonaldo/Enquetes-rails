@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :enqueues
   get 'index' => 'home#index'
   root 'home#index'
 

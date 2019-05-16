@@ -14,4 +14,12 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
 //= require materialize
+//= require froala_editor.min.js
+
+$(document).ready(function() {
+    $('select').formSelect();
+    $('.tabs').tabs();
+    $('.editor').froalaEditor();
+  });

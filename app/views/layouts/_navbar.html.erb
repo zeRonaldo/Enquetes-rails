@@ -1,0 +1,21 @@
+<% if current_user %>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+    
+        <li><a href="<%= logout_path %>" alt="Sair"><i class="material-icons left">exit_to_app</i> Sair</a></li>
+      </ul>
+    </div>
+  </nav>
+<% else %>
+   <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="<%= signup_path %>" alt="Login"><i class="material-icons left">person_add</i> Cadastrar-se</a></li>
+        <li><a href="<%= login_path %>" alt="Login"><i class="material-icons left">account_circle</i> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+<% end %>

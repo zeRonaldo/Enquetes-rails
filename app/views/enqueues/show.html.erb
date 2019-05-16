@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @enqueue.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @enqueue.text %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @enqueue.type %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @enqueue.category %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @enqueue.user %>
+</p>
+
+<%= link_to 'Edit', edit_enqueue_path(@enqueue) %> |
+<%= link_to 'Back', enqueues_path %>
